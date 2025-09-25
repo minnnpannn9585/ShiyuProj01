@@ -12,7 +12,7 @@ public class ScissorLeft : MonoBehaviour
         {
             if (canDestroy)
             {
-                Destroy(this.gameObject);
+                Destroy(transform.parent.gameObject);
             }
             
         }
@@ -23,6 +23,7 @@ public class ScissorLeft : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             canDestroy = true;
+            transform.parent.GetChild(1).gameObject.SetActive(true);
         }
     }
 
@@ -31,6 +32,7 @@ public class ScissorLeft : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canDestroy = false;
+            transform.parent.GetChild(1).gameObject.SetActive(false);
         }
     }
 }
