@@ -27,10 +27,6 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        
-    }
 
     public void ChangeCamera(int number)
     {

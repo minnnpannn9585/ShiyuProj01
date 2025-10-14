@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     bool canDestroy = false;
+    public Vector3 deltaRot;
 
     void Update()
     {
@@ -22,7 +23,7 @@ public class Door : MonoBehaviour
     {
         float time = 0f;
         Quaternion initialRotation = transform.rotation;
-        Quaternion targetRotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0, -90f, 0));
+        Quaternion targetRotation = Quaternion.Euler(transform.eulerAngles + deltaRot);
         while (time < 1f)
         {
             time += Time.deltaTime; // Increment time based on real time
