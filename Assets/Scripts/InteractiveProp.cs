@@ -1,12 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class InteractiveProp : MonoBehaviour
 {
     bool canDestroy = false;
     public GameObject bagCanvas;
     public GameObject propImage;
+    public GameObject ClueCanvas;
+    public string clue;
+    private TMP_Text clueText;
+
+    private void Start()
+    {
+        clueText = ClueCanvas.GetComponentInChildren<TMP_Text>();
+    }
 
     void Update()
     {
@@ -15,7 +26,9 @@ public class InteractiveProp : MonoBehaviour
             if (canDestroy)
             {
                 Destroy(transform.parent.gameObject);
-                bagCanvas.SetActive(true);
+                //bagCanvas.SetActive(true);
+                ClueCanvas.SetActive(true);
+                clueText.text = clue;
                 propImage.SetActive(true);
             }
             
