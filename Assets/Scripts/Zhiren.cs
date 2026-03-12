@@ -8,7 +8,7 @@ public class Zhiren : MonoBehaviour
     public GameObject dialogueCanvas;
     private bool isactive = true;
     public GameObject nvyongTrigger;
-    public GameObject btn02;
+    public GameObject btn01;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +17,7 @@ public class Zhiren : MonoBehaviour
             dialogueCanvas.SetActive(true);
             isactive = false;
             nvyongTrigger.SetActive(true);
-            btn02.SetActive(true);
+            btn01.SetActive(true);
         }
     }
 }

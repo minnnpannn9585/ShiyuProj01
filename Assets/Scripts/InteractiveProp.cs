@@ -7,6 +7,7 @@ using TMPro;
 
 public class InteractiveProp : MonoBehaviour
 {
+    public bool isProp;
     bool canDestroy = false;
     public GameObject bagCanvas;
     public GameObject propImage;
@@ -23,13 +24,24 @@ public class InteractiveProp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+
             if (canDestroy)
+
             {
-                Destroy(transform.parent.gameObject);
-                //bagCanvas.SetActive(true);
-                ClueCanvas.SetActive(true);
-                clueText.text = clue;
-                propImage.SetActive(true);
+                if (isProp)
+                {
+                    Destroy(transform.parent.gameObject);
+                    //bagCanvas.SetActive(true);
+                    ClueCanvas.SetActive(true);
+                    clueText.text = clue;
+                    propImage.SetActive(true);
+                }
+                else
+                {
+                    Destroy(transform.parent.gameObject);
+                    ClueCanvas.SetActive(true);
+                    clueText.text = clue;
+                }
             }
             
         }

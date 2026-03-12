@@ -21,6 +21,6 @@ public class Btn02 : MonoBehaviour
         imageNew.SetActive(true);
         textOld.SetActive(false);
         textNew.SetActive(true);
-        dCanvas.SetActive(false);
+        //dCanvas.SetActive(false);
     }
 }
